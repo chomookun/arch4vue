@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 @SpringBootApplication
-public class Application {
+public class WebApplication {
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(Application.class)
+        new SpringApplicationBuilder(WebApplication.class)
                 .web(WebApplicationType.SERVLET)
                 .registerShutdownHook(true)
                 .run(args);
