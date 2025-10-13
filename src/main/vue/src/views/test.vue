@@ -5,6 +5,7 @@
   </div>
   <XInput v-model="myData.email" label="Email" />
   <hr/>
+  testfdsafdafdsa
   <XTable :columns="3">
     <div v-for="(user, index) in myArray" :key="index">
       <XInput v-model="user.name" :label="`Name ${index + 1}`" />
