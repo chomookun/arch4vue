@@ -1,4 +1,8 @@
-#spring:
-#  mvc:
-#    pathmatch:
-#      matching-strategy: ant_path_matcher
+spring:
+  data:
+    mongodb:
+      port: 27017
+
+app:
+  config:
+    apiBaseUrl: http://127.0.0.1:8080

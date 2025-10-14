@@ -11,8 +11,8 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.3.0",
-    "vue-router": "^4.x.x",
-    "vue-component": "github:chomookun/vue-component"
+    "vue-component": "github:chomookun/vue-component",
+    "vue-router": "^4.x.x"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^5.0.0",

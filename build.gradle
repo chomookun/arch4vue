@@ -1,54 +1,50 @@
 plugins {
     id 'org.springframework.boot' version '3.1.0'
     id 'io.spring.dependency-management' version '1.1.0'
+    id 'io.freefair.lombok' version '8.10'
     id 'java'
 }
 
 group = 'org.chomookun.vuejs-example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
-
-//sourceSets {
-//    main {
-//        resources {
-//            srcDir 'src/main/vuejs/dist'
-//        }
-//    }
-//}
+sourceCompatibility = '21'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+    // test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // mybatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.4'
+
+    // h2database
+    implementation 'com.h2database:h2'
+
+    // spring boot configuration processor
+    implementation 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+    // query dsl
+    implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
+    implementation 'com.querydsl:querydsl-apt:5.0.0:jakarta'
+    implementation 'org.hibernate:hibernate-jpamodelgen:6.3.1.Final'
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+    annotationProcessor 'com.querydsl:querydsl-apt::jakarta'
+    annotationProcessor 'org.hibernate:hibernate-jpamodelgen:6.3.1.Final'
+
+    // embedded mongodb
+    implementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:3.0.0'
 }
 
 test {
     useJUnitPlatform()
 }
 
-// Vue 빌드 결과물을 static 디렉터리로 복사
-task copyVueDist(type: Copy) {
-    dependsOn 'npm_run_build'
-    from 'src/main/vuejs/dist'
-    into 'src/main/resources/static'
-}
-
-//// npm 빌드 실행
-//task npm_run_build(type: Exec) {
-//    workingDir 'src/main/vuejs'
-//    commandLine 'npm', 'run', 'build'
-//    environment 'PATH', System.getenv('PATH')
-//}
-//
-//// bootJar 실행 전에 Vue 빌드 + 복사
-//bootJar {
-//    dependsOn copyVueDist
-//}
-//bootRun {
-//    dependsOn copyVueDist
-//}
-//
-//tasks.processResources.dependsOn copyVueDist
