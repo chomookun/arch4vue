@@ -30,7 +30,6 @@
       <th>Enabled</th>
       <th>Type</th>
       <th>Code</th>
-      <th>Items</th>
     </tr>
     </thead>
     <tbody v-for="(example, index) in examples" :key="index">
