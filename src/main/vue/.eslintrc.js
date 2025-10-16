@@ -11,6 +11,9 @@ module.exports = {
         ecmaVersion: 2020
     },
     rules: {
-        'vue/multi-word-component-names': 'off'
+        'no-unused-vars': 'off',
+        'vue/multi-word-component-names': 'off',
+        "vue/require-v-for-key": "off",
+        "vue/no-unused-vars": "off"
     }
 }

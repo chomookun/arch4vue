@@ -38,6 +38,9 @@ hs_err_pid*
 # swap file
 *.swap
 
+# vscode
+**/.vscode
+
 # ignore generated resource
 **/src/main/generated
 **/src/test/generated_tests

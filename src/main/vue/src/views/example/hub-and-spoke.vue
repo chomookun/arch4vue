@@ -1,6 +1,6 @@
 <template>
-  <h1>HubAndSpoke</h1>
-  <form onsubmit="return false;">
+  <h1>Hub And Spoke</h1>
+  <form onsubmit="return false;" class="display--flex gap--1px">
     <label>
       Name
       <v-input v-model="exampleSearch.name" type="text"/>
@@ -17,7 +17,7 @@
     <button type="submit" @click="getExamples(0);">Search</button>
   </form>
   <hr/>
-  <table>
+  <table class="width--100">
     <thead>
     <tr>
       <th>No</th>
@@ -35,7 +35,7 @@
     <tbody v-for="(example, index) in examples" :key="index">
     <tr>
       <td>{{ index }}</td>
-      <td>{{ example.name }}</td>
+      <td><a :href="`hub-and-spoke-detail?exampleId=${example.exampleId}`">{{ example.name }}</a></td>
       <td>{{ example.number }}</td>
       <td>{{ example.decimalNumber }}</td>
       <td>{{ example.dateTime }}</td>
@@ -43,11 +43,11 @@
       <td>{{ example.time }}</td>
       <td><v-input v-model="example.enabled" type="checkbox"/></td>
       <td>
-        <v-select v-model="example.type" :options="types">
+        <v-select v-model="example.type" :options="types" class="width--100">
         </v-select>
       </td>
       <td>
-        <v-select v-model="example.code" :options="codes" option-value-property="itemId" option-text-proeprty="name">
+        <v-select v-model="example.code" :options="codes" option-value-property="itemId" option-text-proeprty="name" class="width--100">
         </v-select>
       </td>
     </tr>
@@ -59,7 +59,6 @@
 import * as Vue from 'vue';
 import { DataHandler } from 'vue-component';
 import { VInput, VSelect } from 'vue-component';
-// import VTextarea from 'vue-component';
 import axios from "axios";
 
 const exampleSearch = Vue.reactive({
@@ -79,7 +78,9 @@ console.log(DataHandler);
 
 // for debug
 Vue.onMounted(() =>{
+  window.exampleSearch = exampleSearch;
   window.examples = examples;
+  getExamples();
 });
 
 function getExamples(page) {
