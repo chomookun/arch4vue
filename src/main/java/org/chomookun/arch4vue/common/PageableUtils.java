@@ -1,6 +1,5 @@
-package org.chomookun.vueexample.common;
+package org.chomookun.arch4vue.common;
 
-import org.apache.ibatis.session.RowBounds;
 import org.springframework.data.domain.Pageable;
 
 import java.util.Optional;
@@ -45,17 +44,6 @@ public class PageableUtils {
      */
     public static String toContentRange(String unit, Pageable pageable) {
         return toContentRange(unit, pageable, null);
-    }
-
-    /**
-     * Converts pageable to RowBounds.
-     * @param pageable pageable
-     * @return row bounds
-     */
-    public static RowBounds toRowBounds(Pageable pageable) {
-        return pageable.isUnpaged()
-                ? RowBounds.DEFAULT
-                : new RowBounds((int) pageable.getOffset(), pageable.getPageSize());
     }
 
 }

@@ -1,7 +1,6 @@
-package org.chomookun.vueexample.config;
+package org.chomookun.arch4vue.config;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Lazy;

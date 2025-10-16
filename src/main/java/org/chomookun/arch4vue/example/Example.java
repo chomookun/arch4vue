@@ -1,4 +1,4 @@
-package org.chomookun.vueexample.example;
+package org.chomookun.arch4vue.example;
 
 import lombok.Builder;
 import lombok.Getter;

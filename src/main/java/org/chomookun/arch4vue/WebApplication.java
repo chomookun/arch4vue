@@ -1,4 +1,4 @@
-package org.chomookun.vueexample;
+package org.chomookun.arch4vue;
 
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package org.chomookun.vueexample;
+package org.chomookun.arch4vue;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
